@@ -6,11 +6,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
-    // case types.SHOW_CONTACT:
-    //   return Object.assign({}, state, {contact: true});
+    case types.ADD_TEXT:
+    const addText = state.words.push(action.payload);
+
+    return Object.assign({}, state, {words: addText});
       
-    // case types.HIDE_CONTACT:
-    //   return {...state, contact: false};  
       default: return state;
   }
 };

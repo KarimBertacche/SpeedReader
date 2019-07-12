@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addText } from '../../Store/actions';
 
-class WordAdder extends React.Component {
+class TextAdder extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -14,7 +14,7 @@ class WordAdder extends React.Component {
 this.setState({
   [e.target.name]: e.target.value
 });
-  };
+};
 
   addTextToRedux = () => {
     this.props.addWords(this.state.text);
@@ -34,4 +34,4 @@ this.setState({
   }
 }
  
-export default connect(null, { addText })(WordAdder);
+export default connect(null, { addText })(TextAdder);
