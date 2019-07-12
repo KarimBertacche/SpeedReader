@@ -1,12 +1,22 @@
 import React from 'react';
 
-class WordSection extends Component {
+class WordSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      words: ['Hello',],
+         }
   }
+
   render() { 
-    return (  );
+    return ( 
+      <div>
+{this.state.words.map(word => {
+  return <h1>
+  {word}</h1>
+})}
+      </div>
+     );
   }
 }
  
