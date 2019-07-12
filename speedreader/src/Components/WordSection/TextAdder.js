@@ -17,7 +17,7 @@ this.setState({
 };
 
   addTextToRedux = () => {
-    this.props.addWords(this.state.text);
+    this.props.addText(this.state.text);
 
     this.setState({
       text: '',
@@ -27,7 +27,7 @@ this.setState({
   render() { 
     return ( 
       <div>
-      <input name="text" value={this.state.text} onChange={this.changeHandler} placeholder="Text" />
+      <input type="text" name="text" value={this.state.text} onChange={this.changeHandler} placeholder="Text" />
       <button onClick={this.addTextToRedux}>Add</button>
       </div>
      );

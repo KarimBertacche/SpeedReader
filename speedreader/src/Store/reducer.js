@@ -1,15 +1,13 @@
 import * as types from './actions';
 
 const initialState = {
-  words: [],
+  text: ['Hello'],
 }
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
     case types.ADD_TEXT:
-    const addText = state.words.push(action.payload);
-
-    return Object.assign({}, state, {words: addText});
+      return { ...state, text: [...state.text, action.payload] };
       
       default: return state;
   }
