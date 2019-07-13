@@ -28,14 +28,20 @@ class WordSection extends React.Component {
   render() {
     return (
       <div>
-        {this.props.text.map((word, index) => {
+        {/* {this.props.text.map((word, index) => {
           return <div key={index}>
             <h1>
               {word}</h1>
           </div>
-        })}
-        <button onClick={this.start}>Start</button>
+        })} */}
+        <div className="Word-section">
         <h1 className='text'>Start</h1>
+        </div>
+        <div className="settings">
+        <i 
+        onClick={this.start}
+        class="fa fa-play" />
+        </div>
         <TextAdder />
       </div>
     );
