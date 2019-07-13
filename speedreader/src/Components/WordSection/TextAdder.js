@@ -17,7 +17,7 @@ this.setState({
 };
 
   addTextToRedux = () => {
-    this.props.addText(this.state.text);
+    this.props.addText(this.state.text.split);
 
     this.setState({
       text: '',
