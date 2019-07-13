@@ -1,12 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 
-class Header extends Component {
+const StyledHeader = styled.div`
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+`;
+
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  }
   }
   render() { 
-    return (  );
+    return ( 
+      <StyledHeader>
+<h1>SpeedReader</h1>
+      </StyledHeader>
+     );
   }
 }
  
