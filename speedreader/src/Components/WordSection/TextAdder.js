@@ -28,7 +28,9 @@ this.setState({
     return ( 
       <div>
       <input type="text" name="text" value={this.state.text} onChange={this.changeHandler} placeholder="Text" />
-      <button onClick={this.addTextToRedux}>Add</button>
+      <i
+      onClick={this.addTextToRedux} 
+      className="fa fa-plus-square"/>
       </div>
      );
   }
