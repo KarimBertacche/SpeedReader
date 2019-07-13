@@ -1,6 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addText } from '../../Store/actions';
+import styled from 'styled-components';
+
+const StyledTextAdder = styled.div`
+display: flex;
+
+`;
 
 class TextAdder extends React.Component {
   constructor(props) {
@@ -26,12 +32,13 @@ this.setState({
 
   render() { 
     return ( 
-      <div>
+      <StyledTextAdder>
+        <h1>Add text to train your reading skills !</h1>
       <input type="text" name="text" value={this.state.text} onChange={this.changeHandler} placeholder="Text" />
       <i
       onClick={this.addTextToRedux} 
       className="fa fa-plus-square"/>
-      </div>
+      </StyledTextAdder>
      );
   }
 }

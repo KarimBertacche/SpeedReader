@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Components/Header/Header';
-import WordSection from './Components/TextSection/TextSection';
+import TextContainer from './Components/TextContainer/TextContainer';
 import books from './books.jpg'
 import styled from 'styled-components';
 import './App.css';
@@ -17,7 +17,7 @@ function App() {
   return (
     <StyledDiv>
       <Header/>
-      <WordSection/>
+      <TextContainer/>
     </StyledDiv>
   );
 }

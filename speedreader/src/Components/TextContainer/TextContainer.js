@@ -1,14 +1,24 @@
 import React from 'react';
-import
+import TextAdder from '../TextSection/TextAdder';
+import TextSection from '../TextSection/TextSection';
+import { connect } from 'react-redux';
 
-class TextContainer extends Component {
+class TextContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  }
   }
   render() { 
-    return (  );
+    return ( 
+      this.props.addText ? <TextAdder/> : <TextSection/>
+     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    addText: state.addText,
+  }
+};
  
-export default TextContainer;
+export default connect(mapStateToProps)(TextContainer);

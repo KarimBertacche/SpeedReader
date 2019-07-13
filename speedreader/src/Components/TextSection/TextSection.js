@@ -1,5 +1,4 @@
 import React from 'react';
-import TextAdder from './TextAdder';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -151,7 +150,6 @@ class TextSection extends React.Component {
           placeholder="Width"/>
            </div>
         </div>
-        <TextAdder />
       </StyledTextSection>
     );
   }
