@@ -23,6 +23,7 @@ align-items: center;
   display: none;
 }
 
+
 .menu {
   display: flex;
   justify-content: space-around;
@@ -32,6 +33,55 @@ align-items: center;
  background-blend-mode: soft-light,screen;
   width: 400px;
   height: 3rem;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  i {
+    font-size: 2rem;
+    color: white;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.settings {
+width: 30%;
+top          : 50%;
+left         : 50%;
+position     : fixed;
+transform    : translate(-50%, -50%);
+background: lightgrey;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+input {
+/* border-radius: 6rem;
+margin: 0 0 .5rem 0;
+box-shadow: 1rem .5rem .5rem black;
+width: 40%;
+height: 4rem;
+text-align: center;
+font-size: 3rem; */
+}
+ 
+button {
+/* background-color: white;
+border-radius: 20%;
+width: 40%;
+height: 6rem;
+box-shadow: 1rem .5rem .5rem black;
+font-size: 2.5rem;
+cursor: pointer; */
+}
 }
 
 .words-per-min {
@@ -115,14 +165,19 @@ class TextSection extends React.Component {
         className="fa fa-wrench"/>
         </div>
         <div className={this.state.settings ? "settings" : 'off'}>
-        <div className="words-per-min">
+          <div className="close">
+          <i class="fa fa-window-close"/>
+          </div>
+        <div className="row">
         <p>Words per minute</p>
         <input type="number"
          name="number" 
          value={this.state.number} 
          onChange={this.changeHandler}
-          placeholder="number"
-           min="60" />
+         placeholder="number"
+         min="60" />
+         </div>
+         <div className="row">
            <p>Background Color</p>
         <input type="text"
          name="textBackgroundColor" 
@@ -130,25 +185,31 @@ class TextSection extends React.Component {
          onChange={this.changeHandler}
           placeholder="textBackgroundColor"
            />
+            </div>
+           <div className="row">
            <p>Fontsize</p>
         <input type="number"
          name="textFontSize" 
          value={this.state.textFontSize} 
          onChange={this.changeHandler}
           placeholder="Fontsize" />
+           </div>
+          <div className="row">
            <p>Height</p>
         <input type="number"
          name="textHeight" 
          value={this.state.textHeight} 
          onChange={this.changeHandler}
           placeholder="Height" />
+          </div>
+          <div className="row">
            <p>Width</p>
         <input type="number"
          name="textWidth" 
          value={this.state.textWidth} 
          onChange={this.changeHandler}
           placeholder="Width"/>
-           </div>
+          </div>
         </div>
       </StyledTextSection>
     );
