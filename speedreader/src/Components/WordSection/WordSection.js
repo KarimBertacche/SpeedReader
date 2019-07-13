@@ -1,13 +1,28 @@
 import React from 'react';
 import TextAdder from './TextAdder';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+
+const StyledWordSection = styled.div`
+
+.off {
+  display: none;
+}
+`; 
 
 class WordSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      settings: false,
     }
   }
+
+  showSettings = () => {
+    this.setState({
+      settings: true,
+    });
+  };
 
   start = () => {
     const texts = this.props.text;
@@ -27,7 +42,7 @@ class WordSection extends React.Component {
 
   render() {
     return (
-      <div>
+      <StyledWordSection>
         {/* {this.props.text.map((word, index) => {
           return <div key={index}>
             <h1>
@@ -37,13 +52,16 @@ class WordSection extends React.Component {
         <div className="Word-section">
         <h1 className='text'>Start</h1>
         </div>
-        <div className="settings">
+        <i 
+        onClick={this.showSettings}
+        class="fa fa-wrench"/>
+        <div className={this.state.settings ? "settings" : 'off'}>
         <i 
         onClick={this.start}
         class="fa fa-play" />
         </div>
         <TextAdder />
-      </div>
+      </StyledWordSection>
     );
   }
 }
