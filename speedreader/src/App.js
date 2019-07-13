@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Components/Header/Header';
-import WordSection from './Components/WordSection/WordSection';
+import WordSection from './Components/TextSection/TextSection';
 import books from './books.jpg'
 import styled from 'styled-components';
 import './App.css';

@@ -3,7 +3,7 @@ import TextAdder from './TextAdder';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-const StyledWordSection = styled.div`
+const StyledTextSection = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -40,7 +40,7 @@ align-items: center;
 }
 `; 
 
-class WordSection extends React.Component {
+class TextSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,14 +85,13 @@ class WordSection extends React.Component {
     setInterval(increment, resultForSetInterval);
 
     this.setState({
-      number: '',
       settings: false,
     });
   };
 
   render() {
 
-    const styleWordSection = {
+    const styleTextSection = {
       color: this.state.textColor,
       background: this.state.textBackgroundColor,
       fontSize: `${this.state.textFontSize}px`,
@@ -101,10 +100,10 @@ class WordSection extends React.Component {
   };
 
     return (
-      <StyledWordSection>
+      <StyledTextSection>
         <div 
         className="word-section"
-        style={styleWordSection}>
+        style={styleTextSection}>
         <h1 
         className='text'>Start</h1>
         </div>
@@ -153,7 +152,7 @@ class WordSection extends React.Component {
            </div>
         </div>
         <TextAdder />
-      </StyledWordSection>
+      </StyledTextSection>
     );
   }
 }
@@ -164,4 +163,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(WordSection);
+export default connect(mapStateToProps)(TextSection);

@@ -2,8 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
+display: flex;
+justify-content: center;
 h1 {
   font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  color: white;
 }
 `;
 
