@@ -1,4 +1,5 @@
 import React from 'react';
+import { closeSettings, openSettings } from '../../Store/actions';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -55,7 +56,7 @@ width: 30%;
 top          : 50%;
 left         : 50%;
 position     : fixed;
-transform    : translate(-50%, -50%);
+transform    : translate(0%, 0%);
 background: lightgrey;
 display: flex;
 flex-direction: column;
@@ -93,7 +94,6 @@ class TextSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      settings: false,
       number: '',
       textBackgroundColor: '',
       textFontSize: '',
@@ -107,12 +107,6 @@ class TextSection extends React.Component {
       [e.target.name]: e.target.value
     });
     };
-
-  showSettings = () => {
-    this.setState({
-      settings: true,
-    });
-  };
 
   start = () => {
     const texts = this.props.text;
@@ -133,9 +127,6 @@ class TextSection extends React.Component {
 
     setInterval(increment, resultForSetInterval);
 
-    this.setState({
-      settings: false,
-    });
   };
 
   render() {
@@ -161,12 +152,14 @@ class TextSection extends React.Component {
         onClick={this.start}
         className="fa fa-play" />
         <i 
-        onClick={this.showSettings}
+        onClick={this.props.openSettings}
         className="fa fa-wrench"/>
         </div>
-        <div className={this.state.settings ? "settings" : 'off'}>
+        <div className={this.props.settings ? "settings" : 'off'}>
           <div className="close">
-          <i class="fa fa-window-close"/>
+          <i 
+          onClick={this.props.closeSettings}
+          class="fa fa-window-close"/>
           </div>
         <div className="row">
         <p>Words per minute</p>
@@ -218,8 +211,9 @@ class TextSection extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    text: state.text
-  }
-}
+    text: state.text,
+    settings: state.settings
+  };
+};
 
-export default connect(mapStateToProps)(TextSection);
+export default connect(mapStateToProps, { closeSettings, openSettings })(TextSection);
