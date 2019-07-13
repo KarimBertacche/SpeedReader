@@ -52,7 +52,7 @@ align-items: center;
 }
 
 .settings {
-width: 30%;
+width: 20%;
 top          : 50%;
 left         : 50%;
 position     : fixed;
@@ -62,6 +62,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+font-weight: bold;
 
 
 input {
@@ -85,8 +86,10 @@ cursor: pointer; */
 }
 }
 
-.words-per-min {
+.row {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 `; 
 
